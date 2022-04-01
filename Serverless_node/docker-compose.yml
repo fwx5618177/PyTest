@@ -1,0 +1,16 @@
+version: '3'
+services:
+  serverless:
+    container_name: node_serverless
+    image: node:serverless
+    build:
+      context: "./node_atlas"
+      dockerfile: "Dockerfile"
+    privileged: true
+    tty: true
+    ports:
+      - "9000:9000"
+    cap_add:
+      - ALL
+    volumes:
+      - "$PWD/node_atlas/server_node:/var/task"

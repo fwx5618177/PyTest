@@ -1,0 +1,9 @@
+version: '3'
+services:
+  serverless:
+    build:
+      context: "./dockerConnect"
+      dockerfile: "Dockerfile"
+    ports:
+      - "9000:9000"
+    privileged: true
